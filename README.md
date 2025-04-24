@@ -15,7 +15,7 @@
 
 1. Клонируйте репозиторий себе на компьютер:
 
-> git clone https://github.com/your_username/bot-project.git
+> git clone https://github.com/your_username/TelegramBotTimetable
 
 2. Установите требуемые библиотеки Python на виртуальную машину:
 
