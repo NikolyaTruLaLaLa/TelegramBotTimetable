@@ -100,11 +100,11 @@ def timetable(message):
                 if (i == 4 and not(module4)): continue
 
                 data = cursor.execute(f'''SELECT * FROM les_{i}''').fetchall()
-                with open(f'lesson_{i}.txt', 'w', encoding='UTF-8') as f:
+                with open(data_folder + f'lesson_{i}.txt', 'w', encoding='UTF-8') as f:
                     f.write('grade'+' '*8+'student'+' '*46 + 'teacher' + ' '*25 + 'subject'+' '*10+'\n')
                     for x in data:
                         f.write(x[0].center(13)+x[1].center(53)+x[2].center(32)+x[3].center(17)+'\n')
-                bot.send_document(message.chat.id, document=open(f'lesson_{i}.txt', 'rb'))
+                bot.send_document(message.chat.id, document=open(data_folder+f'lesson_{i}.txt', 'rb'))
     except Exception as  e:
         print(str(e), '-> ошибка в команде timetable')
 
